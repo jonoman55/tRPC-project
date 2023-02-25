@@ -4,12 +4,16 @@ This is a [tRPC](https://trpc.io/) server and client project.
 
 tRPC allows you to easily build & consume fully typesafe APIs without schemas or code generation.
 
-To get started, clone the repository, then open two new terminal (one for the server and the other for the client).
+To get started, clone the repository, then open two new terminal windows (one for the server and the other for the client).
 
 You will need to move into both the server and client directories via the terminals.
 
 ### `cd server`
 ### `cd client`
+
+Finally, install the dependencies for both the server and client:
+
+### `npm install`
 
 ## Server
 
