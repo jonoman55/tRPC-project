@@ -1,14 +1,7 @@
-// DOCS: https://vitejs.dev/guide/
-// DOCS: https://trpc.io/
+// DOCS : https://vitejs.dev/guide/
+// DOCS : https://trpc.io/docs/client
 
-import {
-    createTRPCProxyClient,
-    // loggerLink,
-    httpBatchLink,
-    splitLink,
-    wsLink,
-    createWSClient,
-} from "@trpc/client";
+import { createTRPCProxyClient, httpBatchLink, splitLink, wsLink, createWSClient } from "@trpc/client";
 
 import type { AppRouter } from './../../server/api';
 
@@ -18,7 +11,6 @@ const wsClient = createWSClient({
 
 const client = createTRPCProxyClient<AppRouter>({
     links: [
-        // loggerLink(),
         splitLink({
             condition: (op) => {
                 return op.type === "subscription";
@@ -28,7 +20,6 @@ const client = createTRPCProxyClient<AppRouter>({
             }),
             false: httpBatchLink({
                 url: "http://localhost:3000/trpc",
-                // headers: { Authorization: "TOKEN" },
             }),
         }),
     ],
@@ -43,22 +34,23 @@ async function main() {
     // const result = await client.sayHi.query();
     // console.log(result);
 
-    // base app mutation request
+    // base app mutate request
     // const result = await client.logToServer.mutate("Hi from client");
     // console.log(result);
 
-    // nested get user query request
+    // nested user query request
     // const result = await client.users.getUser.query({ userId: "1" });
     // console.log(result);
 
-    // nested mutate user request
+    // nested user mutate request
     // const result = await client.users.update.mutate({ userId: "1", name: "John" });
     // console.log(result);
 
-    // nested admin query
+    // nested user admin query
     // const result = await client.secretData.query();
     // console.log(result);
 
+    // nested user ws subscribe
     client.users.onUpdate.subscribe(undefined, {
         onData: (id) => {
             console.log("Updated: ", id);

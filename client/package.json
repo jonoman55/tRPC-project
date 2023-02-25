@@ -5,6 +5,7 @@
   "type": "module",
   "description": "tRPC Client",
   "author": "John Chiappetta",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

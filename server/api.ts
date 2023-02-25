@@ -1,14 +1,13 @@
-
-import express, { Application } from "express";
+import ws from "ws";
+import express from "express";
 import cors from "cors";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { applyWSSHandler } from "@trpc/server/adapters/ws";
-import ws from "ws";
 
 import { appRouter } from "./routers";
 import { createContext } from "./context";
 
-const app: Application = express();
+const app = express();
 
 app.use(cors({ origin: "http://localhost:5173" }));
 

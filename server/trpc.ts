@@ -1,4 +1,4 @@
-// DOCS: https://trpc.io/
+// DOCS : https://trpc.io/docs/server
 
 import { initTRPC, inferAsyncReturnType, TRPCError } from "@trpc/server";
 import { createContext } from "./context";

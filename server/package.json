@@ -7,9 +7,9 @@
     "start": "node api.ts",
     "dev": "nodemon api.ts"
   },
-  "keywords": ["tRPC", "express", "typescript", "ws"],
+  "keywords": ["tRPC", "node", "express", "typescript", "ws"],
   "author": "John Chiappetta",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@trpc/server": "^10.12.0",
     "cors": "^2.8.5",
